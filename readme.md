@@ -1,258 +1,227 @@
-# The Allegation
+The Allegation
 
-This case is not really about whether the diagnosis of Parkinsonism in July 2017 was right or wrong.
+This is a simple case with a subtle hinge.
 
-Parkinsonism was real.
+The allegation is not that the diagnosis of Parkinsonism in July 2017 was invented. Parkinsonism was real. Nor is the allegation that every corn, callus or episode of foot pain had one neurological cause.
 
-The allegation concerns what happened to the other part of the case — the feet — once a management plan had been formed.
+The allegation is that two decisions became a management frame during the July 2017 admission:
 
-## The management frame
+delay levodopa for as long as possible; and leave the chronic painful feet outside the settled neurological explanation as “Not clear”.
 
-By the end of the July 2017 admission, Neurology had created a workable plan.
+The patient challenged that frame before discharge. The surviving discharge artefact does not record the challenge or the choice it created. It instead presents the course that continued as a coherent, consolidated plan.
 
-The patient had a striking young-onset Parkinsonian syndrome.
+That matters because the discharge document was not a contemporaneous snapshot of the moment the patient left hospital. It was a layered, patient-facing, plan-setting artefact completed after the Protest and after physical discharge, capable of incorporating later information. The distinction between what happened during the admission and what the final document later said about what happened is therefore central to the case.
 
-The team was considering an inherited form of Parkinsonism, including PRKN/PARK2.
+What went into hospital
 
-The treatment strategy was deliberately conservative because of the patient's age. The long neurological account records that:
+On 29 June 2017 the GP sent Neurology an unresolved presentation in which the feet, gait, pathological tension, toe-clawing, deteriorating dexterity and failing function belonged to the same clinical problem.
 
-> “The greatest of care has been advised with Prof Counihan and Neurology Colleagues”
+Neurology then found a striking young-onset Parkinsonian syndrome. It also found a gait that looked like foot drop but was expressly:
 
-when considering dopamine agonists or levodopa, and that:
+NOT FOOT DROP
 
-> “We were likely try and avoid these for as long as possible.”
+and was described as “somewhat suggestive of a dystonic posture.”
 
-The same position appears in correspondence seeking Professor Daniel Healy's advice:
+The feet themselves showed pes planus and hammertoes. The history recorded that the patient had required foot treatment since 2009–2010 and that the feet remained a problem.
 
-> “Myself and Tim are keen to hold back on Levodopa insofar as maybe possible unless you'd advise otherwise?”
+The same account later says that the patient had, in his own mind:
 
-That was one part of the management frame.
+“markedly divorced the feelings of tension in the legs … from the ‘corns and callouses’ issues and pains in the feet.”
 
-The second part concerned the feet.
+That is an important observation, but it must not be made to say more than it says. The patient was distinguishing two experiences: an internal bodily tension and the pain of his feet. He was not thereby agreeing that the two had unrelated causes, that the feet had no neurological component, or that Podiatry answered the clinical question. His later Protest is direct evidence of the opposite proposition: he still regarded the feet as unresolved at the point of discharge.
 
-The feet had been part of the reason the patient reached Neurology in the first place. The GP had referred a combined problem involving feet, gait, abnormal tone, movement difficulty and failing function.
+The neurological synthesis nevertheless placed the painful foot phenomena into a separate explanatory space:
 
-Neurology found genuine structural abnormalities in the feet and a gait that looked almost like foot drop but was expressly:
+they “may have been completely separate”
 
-> **NOT FOOT DROP**
+or perhaps represented:
 
-and “somewhat suggestive of a dystonic posture.”
-
-Nevertheless, when the admission was brought together in the long neurological account, the painful foot phenomena were placed outside the settled neurological diagnosis:
-
-> “may have been completely separate”
-
-or perhaps:
-
-> “a secondary peripheral neuropathy”
+“a secondary peripheral neuropathy”
 
 followed by:
 
-> **“Not clear.”**
+“Not clear.”
 
-Podiatry became the practical destination for the feet.
+Podiatry became their practical destination.
 
-That was the management frame:
+The other half of the frame
 
-**Parkinsonism would be managed neurologically, with levodopa deferred.  
-The painful feet would remain unresolved in causal terms and would be managed separately, principally through Podiatry.**
+At the same time, the treatment strategy was being fixed.
 
-## The Protest
+The discharge account says that the “greatest of care” had been advised with Prof Counihan and Neurology colleagues around the use of dopamine agonists or levodopa because of the patient's very young age. It states:
 
-Before discharge, the patient challenged that frame.
+“We were likely try and avoid these for as long as possible.”
 
-He says that, in the presence of four medical students, he raised the fact that his disabling bilateral foot problem had still not been dealt with.
+Elsewhere the treating neurologist asked for senior advice in the terms:
 
-He asked one of the students to fetch the neurologist.
+“Myself and Tim are keen to hold back on Levodopa insofar as maybe possible unless you'd advise otherwise?”
 
-He used the analogy:
+The discharge account itself recognises that levodopa might work very well and sustainably and even says:
 
-> **“So are you telling me you're going to bring me in here, give me the full NCT, and send me out on bald tyres?”**
+“we may regret that we did not start this earlier.”
 
-The point was simple.
+So this was not a case in which levodopa had been forgotten. It was an active treatment option being deliberately deferred.
 
-The patient was not rejecting Parkinsonism.
+The management frame was therefore:
 
-He was saying that the proposed discharge plan did not answer the problem that had brought him into hospital.
+Parkinsonism managed neurologically with prolonged dopaminergic restraint; painful feet managed separately while their relationship to the neurological disorder remained “Not clear”.
 
-The Protest therefore created another possible path.
+The Protest created another path
 
-Neurology could continue with the existing plan.
+Before discharge, the patient protested.
 
-Or it could stop, take the patient's objection back into the senior discussion, and reconsider whether the feet had been separated too quickly from the neurological condition — including whether the proposed deferral of dopaminergic treatment still made sense in the presentation now being challenged.
+He says that four medical students were present; that one was asked to fetch Dr Monaghan; and that he used the NCT / bald-tyres analogy to say, in substance:
 
-That alternative path is not present in the surviving discharge account.
+You have done a very extensive neurological work-up, but the thing I came in with is still not dealt with.
 
-The Protest is omitted.
+He was not rejecting Parkinsonism. He was challenging the sufficiency of the proposed disposition of the feet.
 
-So is any account of what was considered or decided because of it.
+That created a real choice.
 
-## What the omission did
+Neurology could continue with the management frame already formed.
 
-The significance of the omission is not merely that something the patient said is missing.
+Or it could return to the unresolved question, tell the relevant senior clinician exactly what the patient had just said, and reconsider whether the feet had been separated too early and whether the treatment strategy should now be used diagnostically as well as therapeutically.
 
-The omission removes the fork in the road.
+The surviving account records the first path.
 
-Without the Protest, the record presents a smooth sequence:
+It does not record the second path as having existed.
 
-**Parkinsonism identified → treatment strategy agreed → levodopa deferred → feet to Podiatry → patient understands → discharge.**
+That is why the omission matters. The omission does not merely remove a conversation. It removes the fork in the road.
 
-With the Protest restored, the sequence is different:
+The discharge document is not the admission
 
-**Parkinsonism identified → treatment strategy agreed → feet remain unresolved → patient challenges discharge → another path becomes available → existing plan nevertheless continues.**
+This is now one of the two primary facts of the case.
 
-The allegation is that the omission hardened the first sequence into the authoritative history.
+The long discharge letter describes itself as something more than a routine note. The author says it is intended partly for the patient and is meant:
 
-It made the existing management plan look as though it had simply followed from the clinical facts.
+“to consolidate a lot of discussions which we have had”
 
-It removed from the future record the fact that the patient had challenged one of its central assumptions before the plan became final.
+and to help the patient:
 
-That matters because both parts of the management frame then persisted.
+“with debriefing”
 
-Levodopa continued to be deliberately deferred.
+as well as to set out:
 
-And the chronic painful feet continued to occupy the unresolved category created in July 2017.
+“a clear plan”
 
-## Then the body supplied new information
+for treatment.
 
-Within months, the patient began producing information that bore directly on the unresolved relationship.
+The document later says that the prolonged admission had given the team a:
 
-The original GP presentation had involved:
+“firmer footing going forward for having a plan”
 
-**feet + gait + tension + failing function.**
+and repeatedly describes the patient as exceptionally intelligent, insightful and able to question appropriately. It then records that he had a:
 
-On procyclidine, those things improved together.
+“good understanding of why we wished to delay the commencement of levodopa or dopamine agonist type treatments.”
 
-During withdrawal the patient wrote contemporaneously:
+Finally, under Plan/Recommendations, it says simply:
 
-> **“my feet are restless and my walk is falling apart.”**
+“As per above.”
 
-By April 2018 this was no longer merely the patient's private observation.
+That is important. The narrative is not merely describing the plan. The narrative is being incorporated as the plan.
 
-The neurologist himself recorded that when procyclidine was withdrawn:
+But the surviving artefact was not frozen when the patient left hospital on 11 July.
 
-> **the first thing**
+It expressly contains:
 
-to change, and to change rapidly, was the outside-left-foot phenomenon.
+“ADDENDUM at Transcription finalisation 2017-07-13th_21:41hrs”
 
-The patient also became more “shifty” and “unrelaxed.”
+and the neurologist then writes:
 
-This did not prove that every corn, callus or painful sensation had a single neurological cause.
+“I do apologise for the delay in getting this out”
 
-It established something more immediately relevant:
+before incorporating the DaT scan performed on 13 July and adding further interpretation. The surviving discharge document carries final consultant sign-off on 17 July 2017 at 19:30:34.
 
-**the feet were neurologically modifiable.**
+So this is not a bedside snapshot.
 
-That fact went directly to the question that had been left “Not clear.”
+It is a temporally layered retrospective synthesis, still capable of taking new information after physical discharge.
 
-## April 2018
+That changes the evidential status of everything in it that purports to describe the settled meaning of the admission after the Protest: that the extended admission “suited us and Liam very well”; that the team had a “firmer footing”; that the patient understood the plan; that the plan was clear; and that the recommendations were “as per above.”
 
-This is the point at which the allegation becomes much more serious.
+Those statements may ultimately be true, false, partly true or context-dependent. The point is simpler: they are not self-proving contemporaneous facts merely because they appear in the final discharge artefact. Their date, source and relationship to the Protest have to be reconstructed.
 
-The new information was not missed.
+The same is true of the document's use of the patient's own words. The statement that he had “markedly divorced” leg tension from foot pain is a clinician-authored synthesis of the patient's phenomenological distinction. It cannot safely be converted into proof that the patient accepted the causal or management separation later imposed on the feet—particularly when his direct evidence is that he expressly challenged that separation before discharge.
 
-It was recorded.
+The discharge artefact therefore has to be read in two dimensions at once:
 
-But it did not change the management frame.
+What clinical information does it preserve?
 
-The April 2018 Neurology account still records that levodopa or a dopamine agonist could make the patient “very much better,” while maintaining the decision not to introduce them “at least for quite some time.”
+When, and for what purpose, was that information selected and assembled into the final account?
 
-At the same time, PARK2 remained a live diagnostic possibility.
+Everything between the Protest and final presentation of the document is, at minimum, open to that provenance question.
 
-So the record now contained:
+Then the body answered back
 
-- suspected PRKN/PARK2;
-- a dystonic-looking lower-limb phenotype;
-- dramatic neurological treatment response;
-- rapid return of a focal foot phenomenon when neurological medication was withdrawn;
-- and continued deferral of levodopa.
+The original GP presentation can be reduced to:
 
-What it does not contain is a return to the original question:
+feet + gait + tension + failing function.
 
-> **If neurological treatment is changing the feet, what does that do to our July conclusion that their relationship to the neurological disorder is “Not clear”?**
+By October 2017, neurological treatment was making those same domains improve together.
 
-The information was updated.
+During planned withdrawal of procyclidine, the patient wrote contemporaneously:
 
-The frame was not.
+“my feet are restless and my walk is falling apart.”
 
-## What happened afterwards
+By April 2018, the treating neurologist himself recorded that the first thing to change, and to change rapidly, when procyclidine was withdrawn was the outside-left-foot phenomenon.
 
-That pattern continued.
+That did not prove that every structural lesion in the foot was neurological.
 
-Some individual foot phenomena were progressively recognised as neurological.
+It established something directly relevant to the unresolved July question:
 
-A foot throw was later called parkinsonian.
+the feet were neurologically modifiable.
 
-Foot and leg cramping led to consideration of Parkinsonian OFF dystonia.
+And this is where the case changes.
 
-Shuffling and leg pain were treated as OFF-related.
+The new fact was recorded, but the management frame was not globally reconstructed.
 
-Stalevo and Sinemet affected the feet and pain.
+The record could learn locally that the feet changed with neurological medication while continuing globally to leave the chronic painful feet on the “Not clear” side of the original partition.
 
-But the chronic painful-foot syndrome itself remained capable of being kept outside the neurological diagnosis.
+That is the pattern that continues through the later history.
 
-The clearest evidence is in 2025.
+Foot phenomena become parkinsonian, dystonic and OFF-related. Stalevo and Sinemet alter pain and function. Sinemet CR eventually gives what the neurologist himself calls “profound relief.”
 
-The neurologist records that once Sinemet reaches the patient's system:
+Yet in 2025 the same neurologist can still write:
 
-> **“the feet feel better from a pain perspective.”**
+“If there is a degree of peripheral neuropathy here…”
 
-Sinemet CR was introduced specifically in the setting of severe morning symptoms and subsequently produced what the neurologist himself described as:
+After eight years, neuropathy is still an if.
 
-> **“profound relief.”**
+That is July 2017's “Not clear” still operating.
 
-Yet the explanatory frame remained.
+Why the document lifecycle matters to the allegation
 
-The March 2025 response still says:
+The allegation is not simply that “Not clear” lasted too long.
 
-> **“If there is a degree of peripheral neuropathy here…”**
+The allegation is that the final discharge artefact helped make it durable.
 
-Those words matter.
+Before the Protest, the management frame existed.
 
-After eight years, neuropathy was still an **if**.
+The Protest challenged it and created another possible path.
 
-It had not become a demonstrated explanation.
+The final document was then assembled and completed in the period after that challenge. It expressly set out to consolidate discussions, debrief the patient and define the treatment plan. It incorporated later diagnostic information. It praised the patient's insight and recorded his understanding. It converted the preceding narrative into formal recommendations by saying “As per above.”
 
-And the original relationship had still not become clear.
+But it did not preserve the Protest or the alternative path it created.
 
-The neurologist accepted that Sinemet improved the feet, but explained the effect as relief of the *experience* of pain “of whatever cause.”
+The result is an authoritative account in which the chosen management frame looks like the natural and uncontested consequence of the admission.
 
-That preserved exactly the possibility created in 2017:
+That is the hardening.
 
-**the neurological condition can modify the feet without the painful foot condition itself having to be understood as part of the neurological disorder.**
+It does not require an allegation about motive in order to describe the effect.
 
-## The allegation
+The allegation in one paragraph
 
-The allegation is therefore straightforward.
+The allegation is that July 2017 produced a management frame with two durable commitments: levodopa would be deliberately deferred and the chronic painful feet would remain outside the settled neurological explanation as “Not clear.” The patient challenged that frame before discharge and thereby created another possible path: return the unresolved feet to senior neurological review before closure. The final discharge artefact omitted that Protest and the fork it created. Crucially, that artefact was not a contemporaneous snapshot of discharge but a delayed, layered, patient-facing synthesis whose stated purposes were to consolidate discussions, debrief the patient and set out the plan; it remained open to post-discharge information and was finally signed on 17 July. It therefore cannot simply be treated as neutral proof that the course it describes was settled at the bedside. Within months, neurological treatment demonstrated that the feet were neurologically modifiable, and by April 2018 Neurology itself recorded the rapid return of the outside-left-foot phenomenon on withdrawal. Those local facts accumulated without a corresponding global reconstruction of the “Not clear” frame. By 2025, even profound Sinemet CR relief coexisted with “If there is a degree of peripheral neuropathy here…”. The allegation is that the management frame survived both the patient's challenge and the evidence that followed, while the final discharge artefact obscured the existence of the alternative path at the point when it still could have been taken.
 
-**In July 2017 Neurology created a management frame containing two durable commitments: defer levodopa because of the patient's age and leave the chronic painful feet outside the settled Parkinsonian explanation as “Not clear.”**
+What this does not allege
 
-The patient challenged that arrangement before discharge.
+This does not require saying that every foot symptom was dystonia, that Podiatry was inappropriate, or that levodopa necessarily had to be started in July 2017. Those are clinical questions for expert evidence.
 
-His Protest created another possible path: return the unresolved feet to the neurological question, take the challenge back into senior review, and reconsider the management plan before closure.
+It does require separating three things that the surviving record tends to merge:
 
-The Protest was omitted from the durable account.
+what was known and observed during the admission;
 
-The effect of that omission was to remove the alternative path from the institutional history and to make the existing management plan concrete.
+what the patient actually accepted or challenged;
 
-Thereafter, evidence accumulated that directly bore on the unresolved relationship.
+and what the delayed final discharge artefact later represented as the coherent meaning of the admission.
 
-The feet were shown repeatedly to be neurologically modifiable.
-
-Neurology recorded those facts.
-
-But the management frame survived them.
-
-By April 2018 the record had already supplied enough information to require the original “Not clear” to be revisited.
-
-By March 2025, after years of medication-dependent foot phenomena and profound relief with controlled-release Sinemet, the neurologist was still writing:
-
-> **“If there is a degree of peripheral neuropathy here…”**
-
-That is not a resolution of “Not clear.”
-
-It is its continuation.
-
-## In one paragraph
-
-The allegation is that the July 2017 management plan did more than defer levodopa. It also placed the patient's chronic painful feet outside the settled neurological condition and left their relationship “Not clear.” The patient protested that separation before discharge. By omitting the Protest, the final record omitted the existence of another possible course and preserved only the pathway that was taken. When subsequent neurological treatment repeatedly demonstrated that the feet were neurologically modifiable, those observations were incorporated without reconstructing the original frame. The result was that the plan survived the evidence: levodopa remained deferred for years, while the painful feet remained causally unresolved even after Sinemet and Sinemet CR were acknowledged to relieve them profoundly. In 2025 the same neurologist could still write, “If there is a degree of peripheral neuropathy here.” That sentence is the July 2017 “Not clear” still operating eight years later.
+That distinction is now central to the case.
