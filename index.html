@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light" />
+  <title>Counsel Brief — Essays</title>
+  <meta name="description" content="A swipeable reading edition of the Counsel Brief essays." />
+  <style>
+    :root {
+      --paper: #fff;
+      --ink: #0a0a0a;
+      --muted: #666;
+      --line: #d9d9d9;
+      --soft: #f5f5f3;
+      --header-h: 68px;
+      --max: 760px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    html { background: var(--paper); }
+    body {
+      overflow: hidden;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; color: inherit; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: calc(var(--header-h) + env(safe-area-inset-top));
+      padding: env(safe-area-inset-top) 16px 0;
+      display: grid;
+      grid-template-columns: 44px 1fr 44px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+
+    .topbar button {
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 22px;
+    }
+    .topbar button:hover { background: var(--soft); }
+
+    .identity {
+      min-width: 0;
+      text-align: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .identity strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .identity span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .reading-progress {
+      position: fixed;
+      top: calc(var(--header-h) + env(safe-area-inset-top) - 2px);
+      left: 0;
+      right: 0;
+      height: 2px;
+      z-index: 60;
+      pointer-events: none;
+    }
+    .reading-progress > i {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: #000;
+      transition: width .08s linear;
+    }
+
+    .viewport {
+      position: fixed;
+      inset: calc(var(--header-h) + env(safe-area-inset-top)) 0 0 0;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+      transition: transform 360ms cubic-bezier(.22,.8,.25,1);
+    }
+    .track.dragging { transition: none; }
+
+    .slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+
+    .paper {
+      width: min(100% - 34px, var(--max));
+      margin: 0 auto;
+      padding: clamp(34px, 6vw, 72px) 0 calc(112px + env(safe-area-inset-bottom));
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .essay-title {
+      margin: 0 0 16px;
+      font-size: clamp(38px, 8vw, 72px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 700;
+    }
+    .essay-deck {
+      margin: 0 0 30px;
+      max-width: 42rem;
+      color: #333;
+      font-size: clamp(18px, 3.8vw, 23px);
+      line-height: 1.45;
+    }
+    .rule { border: 0; border-top: 1px solid var(--ink); margin: 28px 0 42px; }
+
+    .content {
+      font-size: clamp(18px, 3.7vw, 21px);
+      line-height: 1.72;
+      overflow-wrap: anywhere;
+    }
+    .content > :first-child { margin-top: 0; }
+    .content h1 {
+      margin: 0 0 32px;
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -.035em;
+    }
+    .content h2 {
+      margin: 2.7em 0 .75em;
+      font-size: clamp(27px, 5vw, 38px);
+      line-height: 1.13;
+      letter-spacing: -.025em;
+    }
+    .content h3 {
+      margin: 2.1em 0 .65em;
+      font-size: clamp(22px, 4vw, 29px);
+      line-height: 1.2;
+    }
+    .content p { margin: 0 0 1.2em; }
+    .content ul, .content ol { margin: 0 0 1.4em; padding-left: 1.35em; }
+    .content li { margin: .35em 0; }
+    .content strong { font-weight: 700; }
+    .content blockquote {
+      margin: 2em 0;
+      padding: .2em 0 .2em 1.15em;
+      border-left: 4px solid #000;
+      font-size: 1.08em;
+      line-height: 1.55;
+    }
+    .content blockquote p:last-child { margin-bottom: 0; }
+    .content hr { border: 0; border-top: 1px solid var(--line); margin: 3em 0; }
+    .content code {
+      padding: .12em .3em;
+      border-radius: 3px;
+      background: var(--soft);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .84em;
+    }
+    .content pre {
+      overflow: auto;
+      padding: 16px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .content pre code { padding: 0; background: transparent; }
+    .content a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .content table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      border-collapse: collapse;
+      font-size: .9em;
+    }
+    .content th, .content td { padding: 8px 10px; border: 1px solid var(--line); vertical-align: top; }
+
+    .loading, .error {
+      margin: 60px 0;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .source-row {
+      margin-top: 52px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+    }
+    .source-row a { color: inherit; text-underline-offset: 3px; }
+
+    .navdock {
+      position: fixed;
+      left: 50%;
+      bottom: calc(14px + env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      z-index: 45;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 8px 28px rgba(0,0,0,.09);
+      backdrop-filter: blur(12px);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .navdock button {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .navdock button:hover { background: var(--soft); }
+    .navdock button:disabled { opacity: .25; cursor: default; }
+    .counter {
+      min-width: 58px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) min(88vw, 430px);
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .drawer.open { visibility: visible; pointer-events: auto; }
+    .scrim {
+      background: rgba(0,0,0,.25);
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+    .drawer.open .scrim { opacity: 1; }
+    .panel {
+      height: 100%;
+      padding: calc(18px + env(safe-area-inset-top)) 20px calc(24px + env(safe-area-inset-bottom));
+      overflow-y: auto;
+      border-left: 1px solid var(--line);
+      background: #fff;
+      transform: translateX(100%);
+      transition: transform 260ms cubic-bezier(.2,.8,.2,1);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .drawer.open .panel { transform: translateX(0); }
+    .panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .panel-head strong { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+    .panel-head button { width: 42px; height: 42px; border: 0; background: transparent; border-radius: 50%; cursor: pointer; font-size: 22px; }
+    .toc { display: grid; gap: 7px; }
+    .toc button {
+      width: 100%;
+      padding: 15px 14px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+    .toc button:hover { background: var(--soft); }
+    .toc button.active { border-color: #000; }
+    .toc .n { display: block; margin-bottom: 5px; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .toc .t { display: block; font-size: 15px; font-weight: 650; line-height: 1.25; }
+    .toc .d { display: block; margin-top: 5px; color: var(--muted); font-family: ui-serif, Georgia, serif; font-size: 14px; line-height: 1.35; }
+
+    .hint {
+      position: fixed;
+      right: 16px;
+      bottom: calc(18px + env(safe-area-inset-bottom));
+      z-index: 40;
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
+      letter-spacing: .04em;
+      pointer-events: none;
+    }
+
+    @media (max-width: 620px) {
+      :root { --header-h: 62px; }
+      .topbar { padding-left: 8px; padding-right: 8px; }
+      .paper { width: min(100% - 30px, var(--max)); padding-top: 30px; }
+      .essay-title { font-size: clamp(39px, 12vw, 60px); }
+      .content { font-size: 18.5px; line-height: 1.68; }
+      .hint { display: none; }
+      .navdock { bottom: calc(9px + env(safe-area-inset-bottom)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .track, .panel, .scrim { transition: none !important; }
+      .slide { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <button id="menuBtn" aria-label="Open contents">☰</button>
+    <div class="identity">
+      <strong>Counsel Brief</strong>
+      <span id="currentTitle">Essays</span>
+    </div>
+    <button id="topBtn" aria-label="Back to top">↑</button>
+  </header>
+  <div class="reading-progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+  <main class="viewport" id="viewport" aria-live="polite">
+    <div class="track" id="track"></div>
+  </main>
+
+  <nav class="navdock" aria-label="Essay navigation">
+    <button id="prevBtn" aria-label="Previous essay">←</button>
+    <span class="counter" id="counter">1 / 1</span>
+    <button id="nextBtn" aria-label="Next essay">→</button>
+  </nav>
+  <div class="hint">Swipe · ← → keys</div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="scrim" id="scrim"></div>
+    <div class="panel" role="dialog" aria-modal="true" aria-label="Essay contents">
+      <div class="panel-head">
+        <strong>Contents</strong>
+        <button id="closeBtn" aria-label="Close contents">×</button>
+      </div>
+      <div class="toc" id="toc"></div>
+    </div>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const essays = [
+      {
+        slug: 'allegation',
+        file: 'readme.md',
+        title: 'The Allegation',
+        deck: 'The management frame, the Protest, the fork in the road, and the durable account.'
+      },
+      {
+        slug: 'discharge-artefact',
+        file: '09_DISCHARGE_ARTEFACT_FINDINGS_FOR_ALLEGATION.md',
+        title: 'The Discharge Artefact',
+        deck: 'Why the completed July 2017 document is a layered synthesis rather than a bedside snapshot.'
+      },
+      {
+        slug: 'questions',
+        file: '10_QUESTIONS_THE_ALLEGATION_MAKES_UNAVOIDABLE.md',
+        title: 'The Questions',
+        deck: 'The factual, documentary and clinical questions the allegation now has to survive.'
+      },
+      {
+        slug: 'clinical-facts',
+        file: '11_CLINICAL_FACTS_CLARIFYING_THE_MANAGEMENT_FRAME.md',
+        title: 'Clinical Facts',
+        deck: 'The treating record in its own words: origin, continuity and later defence of the management approach.'
+      },
+      {
+        slug: 'consequences',
+        file: '12_REAL_WORLD_CONSEQUENCES (1).md',
+        title: 'Real World Consequences',
+        deck: 'The survival of a frame in the presence of accumulating neurological information.'
+      },
+      {
+        slug: 'not-clear',
+        file: 'Not-clear',
+        title: 'The Extraordinary Inertia of “Not Clear”',
+        deck: 'How legitimate uncertainty can become durable when no mechanism for reopening it is preserved.'
+      },
+      {
+        slug: 'record',
+        file: 'complete-record-forensic-expanded.md',
+        title: 'The Complete Record',
+        deck: 'The evidential spine: the underlying longitudinal compilation from which the essays are tested.'
+      }
+    ];
+
+    const repo = 'https://github.com/TitanicParker/Counsel-Brief/blob/main/';
+    const track = document.getElementById('track');
+    const counter = document.getElementById('counter');
+    const currentTitle = document.getElementById('currentTitle');
+    const progressBar = document.getElementById('progressBar');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const topBtn = document.getElementById('topBtn');
+    const drawer = document.getElementById('drawer');
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const scrim = document.getElementById('scrim');
+    const toc = document.getElementById('toc');
+
+    let index = Math.max(0, essays.findIndex(x => x.slug === new URLSearchParams(location.search).get('essay')));
+    let startX = 0;
+    let startY = 0;
+    let dx = 0;
+    let dragging = false;
+    let horizontal = false;
+
+    marked?.setOptions?.({ gfm: true, breaks: false });
+
+    function cleanMarkdown(text) {
+      return text
+        .replace(/:contentReference\[[^\]]*\]\{index=\d+\}/g, '')
+        .replace(/^The Allegation\s*\n+/i, '');
+    }
+
+    function renderMarkdown(text) {
+      const clean = cleanMarkdown(text);
+      if (window.marked?.parse) return window.marked.parse(clean);
+      const pre = document.createElement('pre');
+      pre.textContent = clean;
+      return pre.outerHTML;
+    }
+
+    function buildSlides() {
+      track.innerHTML = essays.map((essay, i) => `
+        <section class="slide" data-index="${i}" aria-label="${essay.title}">
+          <article class="paper">
+            <div class="eyebrow">Essay ${String(i + 1).padStart(2, '0')} · ${essay.file}</div>
+            <h1 class="essay-title">${essay.title}</h1>
+            <p class="essay-deck">${essay.deck}</p>
+            <hr class="rule" />
+            <div class="content" id="content-${i}"><div class="loading">Loading essay…</div></div>
+            <div class="source-row">
+              <span>Source</span>
+              <a href="${repo + encodeURIComponent(essay.file).replace(/%2F/g, '/')}" target="_blank" rel="noopener">View original on GitHub ↗</a>
+            </div>
+          </article>
+        </section>
+      `).join('');
+
+      document.querySelectorAll('.slide').forEach(slide => {
+        slide.addEventListener('scroll', () => {
+          if (Number(slide.dataset.index) === index) updateReadingProgress();
+        }, { passive: true });
+      });
+    }
+
+    function buildToc() {
+      toc.innerHTML = essays.map((essay, i) => `
+        <button data-go="${i}">
+          <span class="n">${i === essays.length - 1 ? 'Source' : `Essay ${String(i + 1).padStart(2, '0')}`}</span>
+          <span class="t">${essay.title}</span>
+          <span class="d">${essay.deck}</span>
+        </button>
+      `).join('');
+      toc.addEventListener('click', e => {
+        const btn = e.target.closest('[data-go]');
+        if (!btn) return;
+        goTo(Number(btn.dataset.go));
+        closeDrawer();
+      });
+    }
+
+    async function loadEssay(i) {
+      const node = document.getElementById(`content-${i}`);
+      if (!node || node.dataset.loaded === '1') return;
+      node.dataset.loaded = '1';
+      try {
+        const response = await fetch(encodeURI(essays[i].file), { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        const text = await response.text();
+        node.innerHTML = renderMarkdown(text);
+      } catch (err) {
+        node.dataset.loaded = '0';
+        node.innerHTML = `<div class="error">Unable to load this essay. <a href="${repo + encodeURIComponent(essays[i].file)}" target="_blank" rel="noopener">Open the source on GitHub</a>.</div>`;
+      }
+    }
+
+    function loadAround(i) {
+      loadEssay(i);
+      if (i > 0) loadEssay(i - 1);
+      if (i < essays.length - 1) loadEssay(i + 1);
+    }
+
+    function updateReadingProgress() {
+      const slide = document.querySelector(`.slide[data-index="${index}"]`);
+      if (!slide) return;
+      const max = slide.scrollHeight - slide.clientHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, slide.scrollTop / max * 100)) : 100;
+      progressBar.style.width = `${pct}%`;
+    }
+
+    function syncUi(pushUrl = true) {
+      track.style.transform = `translate3d(${-index * 100}%,0,0)`;
+      counter.textContent = `${index + 1} / ${essays.length}`;
+      currentTitle.textContent = essays[index].title;
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === essays.length - 1;
+      document.title = `${essays[index].title} — Counsel Brief`;
+
+      toc.querySelectorAll('[data-go]').forEach(btn => btn.classList.toggle('active', Number(btn.dataset.go) === index));
+      loadAround(index);
+      updateReadingProgress();
+
+      if (pushUrl) {
+        const url = new URL(location.href);
+        url.searchParams.set('essay', essays[index].slug);
+        history.replaceState(null, '', url);
+      }
+    }
+
+    function goTo(next, reset = true) {
+      next = Math.max(0, Math.min(essays.length - 1, next));
+      if (next === index) return;
+      index = next;
+      if (reset) {
+        const slide = document.querySelector(`.slide[data-index="${index}"]`);
+        slide?.scrollTo({ top: 0, behavior: 'instant' });
+      }
+      syncUi();
+    }
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      closeBtn.focus();
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      menuBtn.focus();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+    topBtn.addEventListener('click', () => document.querySelector(`.slide[data-index="${index}"]`)?.scrollTo({ top: 0, behavior: 'smooth' }));
+    menuBtn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    scrim.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', e => {
+      if (drawer.classList.contains('open')) {
+        if (e.key === 'Escape') closeDrawer();
+        return;
+      }
+      if (e.key === 'ArrowLeft') goTo(index - 1);
+      if (e.key === 'ArrowRight') goTo(index + 1);
+    });
+
+    const viewport = document.getElementById('viewport');
+    viewport.addEventListener('pointerdown', e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      startX = e.clientX;
+      startY = e.clientY;
+      dx = 0;
+      dragging = true;
+      horizontal = false;
+      track.classList.add('dragging');
+      viewport.setPointerCapture?.(e.pointerId);
+    });
+
+    viewport.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const x = e.clientX - startX;
+      const y = e.clientY - startY;
+      if (!horizontal && Math.abs(x) > 8) horizontal = Math.abs(x) > Math.abs(y) * 1.15;
+      if (!horizontal) return;
+      dx = x;
+      const edgeResistance = (index === 0 && dx > 0) || (index === essays.length - 1 && dx < 0) ? .28 : 1;
+      const px = -index * viewport.clientWidth + dx * edgeResistance;
+      track.style.transform = `translate3d(${px}px,0,0)`;
+    });
+
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('dragging');
+      if (horizontal && Math.abs(dx) > Math.min(110, viewport.clientWidth * .18)) {
+        if (dx < 0) goTo(index + 1);
+        else goTo(index - 1);
+      } else {
+        syncUi(false);
+      }
+      dx = 0;
+      horizontal = false;
+    }
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', endDrag);
+
+    buildSlides();
+    buildToc();
+    syncUi(false);
+  </script>
+</body>
+</html>
